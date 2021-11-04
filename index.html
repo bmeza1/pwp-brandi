@@ -8,8 +8,22 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+<!--    JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <!--    Font Awesome-->
     <script src="https://kit.fontawesome.com/642e3b3095.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".hamburger .fas").click(function (){
+                $(".wrapper").addClass("active");
+            })
+            $(".close").click(function (){
+                $(".wrapper").removeClass("active");
+            })
+        })
+    </script>
 
 <!--    CSS-->
     <link rel="stylesheet" href="style.css" type="text/css">
@@ -18,24 +32,108 @@
 <body>
 
 <!--navbar-->
-    <nav>
-        <h2>Brandi Meza</h2>
-        <a href="#">Home</a>
-        <a href="#">About Me</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact</a>
+<!--    <nav>-->
+<!--        <h2>Brandi Meza</h2>-->
+<!--        <a href="#">Home</a>-->
+<!--        <a href="#">About Me</a>-->
+<!--        <a href="#">Portfolio</a>-->
+<!--        <a href="#">Contact</a>-->
 
-        <div class="socials">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+<!--        <div class="socials">-->
+<!--            <a href="#"><i class="fab fa-github"></i></a>-->
+<!--            <a href="#"><i class="fab fa-linkedin-in"></i></a>-->
+<!--            <a href="#"><i class="fab fa-instagram"></i></a>-->
+<!--        </div>-->
+<!--    </nav>-->
+
+
+<!--    <main>-->
+<!--       <section-->
+<!--    </main>-->
+
+
+
+<div class="wrapper">
+    <div class="sidebar">
+        <div class="bg-shadow"></div>
+        <div class="sidebar_inner">
+            <div class="close">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </div>
+            <div class="profile_info">
+                <div class="profile_img">
+                    <img src="public_html/images/placeholderr.png" alt="Photo of me">
+                </div>
+                <div class="profile_data">
+                    <div class="name">Brandi Meza</div>
+                    <div class="role">Full Stack Web Developer</div>
+                </div>
+            </div>
+        <ul class="sidebar_menu">
+            <li><a href="#">
+                <div class="title">Home</div>
+            </a></li>
+            <li><a href="#">
+                <div class="title">About Me</div>
+            </a></li>
+            <li><a href="#">
+                <div class="title">Portfolio</div>
+            </a></li>
+            <li><a href="#">
+                <div class="title">Contact</div>
+            </a></li>
+        </ul>
         </div>
-    </nav>
+    </div>
+    <div class="main_container">
+        <div class="top_navbar">
+            <div class="hamburger">
+                <div class="hamburger_inner">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </div>
+            </div>
+            <ul class="menu">
+                <li><a href="#">ONE</a> </li>
+                <li><a href="#">TWO</a> </li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="item">
+                Mr. Worf, you do remember how to fire phasers? The Enterprise computer system is controlled by three primary main processor cores, cross-linked with a redundant melacortz ramistat, fourteen kiloquad interface modules. Sorry, Data. Fate protects fools, little children and ships named Enterprise. But the probability of making a six is no greater than that of rolling a seven.
+            </div>
+            <div class="item">
+                Mr. Worf, you do remember how to fire phasers? The Enterprise computer system is controlled by three primary main processor cores, cross-linked with a redundant melacortz ramistat, fourteen kiloquad interface modules. Sorry, Data. Fate protects fools, little children and ships named Enterprise. But the probability of making a six is no greater than that of rolling a seven.
+            </div>
+            <div class="item">
+                Mr. Worf, you do remember how to fire phasers? The Enterprise computer system is controlled by three primary main processor cores, cross-linked with a redundant melacortz ramistat, fourteen kiloquad interface modules. Sorry, Data. Fate protects fools, little children and ships named Enterprise. But the probability of making a six is no greater than that of rolling a seven.
+            </div>
 
-
-    <main>
-        <h1>Brandi Meza</h1>
-    </main>
+<!--            Contact Form-->
+            <div class="item">
+                <h3 id="contact-me">Get in touch!</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Name*</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Email*</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput2">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Subject*</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput3">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Message*</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <button class="contact-button" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
