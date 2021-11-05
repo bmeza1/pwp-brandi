@@ -5,7 +5,9 @@ const Recaptcha = require("express-recaptcha").RecaptchaV2
 const formData = require("form-data")
 const Mailgun = require("mailgun.js")
 const mailgun = new Mailgun(formData)
+require('dotenv').congif()
 const {check, validationResult} = require("express-validator")
+const {request, response} = require("express");
 
 const validation = [
     check("name", "A valid name is required").not().isEmpty().trim().escape(),
