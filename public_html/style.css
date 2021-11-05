@@ -313,7 +313,8 @@ body{
 
 .contact-button{
     display: inline-block;
-    background: white;
+    color: black;
+    background-color: white;
     padding:0.35em 1.2em;
     margin:0 0.3em 0.3em 0;
     box-sizing: border-box;
@@ -324,3 +325,8 @@ body{
     cursor: pointer;
 }
 
+.contact-button:hover{
+    background: none;
+    color: white;
+    border:0.1em solid floralwhite;
+}

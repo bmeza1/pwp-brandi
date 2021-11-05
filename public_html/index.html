@@ -65,7 +65,7 @@
                     <img src="public_html/images/placeholderr.png" alt="Photo of me">
                 </div>
                 <div class="profile_data">
-                    <div class="name">Brandi Meza</div>
+                    <div class="names">Brandi Meza</div>
                     <div class="role">Full Stack Web Developer</div>
                 </div>
             </div>
@@ -114,26 +114,55 @@
 <!--            Contact Form-->
             <div class="item">
                 <h3 id="contact-me">Get in touch</h3>
-                <form>
+                <form action="./apis/" id="contact" method="post" nonvalidate>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Name*</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1">
+                        <label for="name">Name</label>
+                        <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa-fa-user"></i></span>
+                         </div>
+                        <input class="form-control" id="name" name="name" placeholder="Your Name" type="text">
+                    </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Email*</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput2">
+                        <label for="email">Email</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa-fa-envelope"></i></span>
+                            </div>
+                        <input class="form-control" id="email" name="email" placeholder="Your Email" type="email">
                     </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Subject*</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput3">
                     </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Message*</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                    <button class="contact-button" type="submit">Submit</button>
-                </form>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa-fa-pencil"></i></span>
+                </div>
+                <input class="form-control" id="subject" name="subject" placeholder="Subject" type="text">
             </div>
+        </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa-fa-comment"></i></span>
+                            </div>
+                            <textarea class="form-control" id="message" maxlength="2000" name="message" placeholder="Your Message (2000 characters max)" required rows="5"></textarea>
+                        </div>
+                    </div>
+<!--                    Site Key Google Re Captcha-->
+                    <div class="g-recaptcha" data-sitekey="6LcqghcdAAAAAJnTUGy8fLAbG-PbyYsS35EheOyd"></div>
+
+                    <button class="contact-button btn btn-info" type="submit">Submit</button>
+                    <button class="contact-button btn btn-default" type="reset">Reset</button>
+                </form>
+
+<!--                End Contact Form-->
+            <div id="output-area"></div>
+
+            </div>
+
         </div>
     </div>
 </div>
@@ -147,9 +176,19 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js" integrity="sha512-XZEy8UQ9rngkxQVugAdOuBRDmJ5N4vCuNXCh8KlniZgDKTvf7zl75QBtaVG1lEhMFe2a2DuA22nZYY+qsI2/xA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!--JS SCRIPT-->
+<script src="script.js"></script>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </body>
 </html>
 
