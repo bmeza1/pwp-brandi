@@ -315,14 +315,15 @@ body{
 
 
 
-/*Contact Form*/
-#contact-me {
+
+h3 {
     color: black;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 15px;
 }
 
+/*Contact Form*/
 .contact-button{
     display: inline-block;
     color: black;
