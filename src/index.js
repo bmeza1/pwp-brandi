@@ -5,7 +5,6 @@ const Recaptcha = require("express-recaptcha").RecaptchaV2
 const formData = require("form-data")
 const Mailgun = require("mailgun.js")
 const mailgun = new Mailgun(formData)
-require('dotenv').config()
 const {check, validationResult} = require("express-validator")
 const {request, response} = require("express");
 
@@ -34,6 +33,7 @@ const handleGetRequest = (request, response) => {
 
 const handlePostRequest = (request, response) => {
     response.append('Content-Type', 'text/html')
+    response.append("Access-Control-Allow-Origin", "*")
 
     if (request.recaptcha.error) {
         return response.send(
@@ -58,13 +58,14 @@ const handlePostRequest = (request, response) => {
     }
 
     mg.messages.create(process.env.MAILGUN_DOMAIN, mailgunData)
-        .then(msg =>
-        response.send(
-        `<div class='alert alert-success' role='alert' >${JSON.stringify(msg)}</div>`
+        .then(() =>
+        response.send(Buffer.from(`<div class='alert alert-success' role='alert' >Email was successfully sent</div>`)
+
+
     ))
     .catch(err =>
     response.send(
-        `<div class='alert alert-danger' role='alert'><strong>Oh Snap!</strong>${err}</div>`
+            `<div class='alert alert-danger' role='alert'><strong>Oh Snap!</strong>${err}</div>`
     ))
 }
 
@@ -77,3 +78,4 @@ app.use('/apis', indexRoute)
 app.listen(4200, () => {
     console.log('Express Successfully Built')
 })
+

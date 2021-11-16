@@ -18,7 +18,7 @@ $(document).ready(function(){
             message: {
                 required: true,
                 maxlength: 2000
-            }
+            },
         },
         messages: {
             name: {
@@ -26,10 +26,10 @@ $(document).ready(function(){
             },
             email: {
                 email: "Please provide a valid email",
-                required: "Email is required"
+                required: "Email is required field"
             },
             message: {
-                required: "A message is required",
+                required: "Message is a required field",
                 maxlength: "Message must be 2000 characters or less"
             }
         },
