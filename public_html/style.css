@@ -6,8 +6,7 @@
     text-decoration: none;
     outline: none;
     border: none;
-    /*text-transform: capitalize;*/
-    transition: all .2s linear;
+    transition: all .2s ease;
 }
 
 html{
@@ -34,10 +33,20 @@ section{
     margin-top: 1rem;
     font-size: 2rem;
     border-radius: 5rem;
+    border:0.1em solid #4b4276;
 }
 
 .btn:hover{
     background-color: #4b4276;
+}
+
+.heading{
+    text-align: center;
+    margin: 0 6rem;
+    font-size: 4rem;
+    padding: 1rem;
+    border-bottom: .1rem solid mediumpurple;
+    color: #4b4276;
 }
 
 /*Navbar style begins*/
@@ -45,7 +54,7 @@ header{
     position: fixed;
     top:0;
     left: 0;
-    z-index: 1000;
+    z-index: 999;
     height: 100%;
     width: 30rem;
     background: #4b4276;
@@ -98,6 +107,21 @@ header .navbar ul li a:hover{
     background: slategrey;
 }
 
+/*Close and Open Navbar Shadow effect */
+.bg-shadow{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+
 /*hamburger nav*/
 #menu{
     position: fixed;
@@ -121,29 +145,31 @@ header .navbar ul li a:hover{
 }
 
 .home h3{
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #4b4276;
+    text-align: left;
 }
 
 .home h1{
     font-size: 5rem;
     color: #4b4276;
+    text-align: center;
 }
 
 .home p{
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #4b4276;
     padding: 1rem 0;
 }
 
-.home_social{
+.home-social{
     display: inline-block;
     align-items: center;
     color: mediumpurple;
     margin-top: 4rem;
 }
 
-.home_social i{
+.home-social i{
     align-items: center;
     justify-content: center;
     color: mediumpurple;
@@ -153,31 +179,147 @@ header .navbar ul li a:hover{
     margin-left: 2rem;
 }
 
-.home_social i:hover{
+.home-social i:hover{
     color: #4b4276;
 }
 
+
+/*about styling*/
+.about-img{
+    width: 200px;
+    height: auto;
+    border-radius: .5rem;
+    justify-self: center;
+    align-self: center;
+    max-width: 100%;
+}
+
+.about-details{
+    font-size: 1.5rem;
+    color: #4b4276;
+    padding: 1rem 0;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*.about .row{*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    flex-wrap: wrap;*/
+/*    padding: 1rem 0;*/
+/*}*/
+
+
+
+
+
+/*skills*/
+
+/*.container{*/
+/*    max-width: 768px;*/
+/*    margin-left: 1.5rem;*/
+/*    margin-right: 1.5rem;*/
+/*}*/
+
+/*.grid{*/
+/*    display: grid;*/
+/*    gap: 1.5rem;*/
+/*}*/
+#skills{
+    margin-top: 3rem;
+}
+
+.skills-container{
+    row-gap: 0;
+}
+
+.skills-header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    cursor: pointer;
+}
+
+.skills-icon,
+.skills-arrow{
+    font-size: 2rem;
+    color: mediumpurple;
+}
+
+.skills-icon{
+    margin-right: 1rem;
+}
+
+.skills-title{
+    font-size: 2.5rem;
+}
+
+.skills-arrow{
+    margin-left: .75rem;
+    transition: .4s;
+}
+.skills-titles{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.skills-name{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.skills-close .skills-list{
+    height: 0;
+    overflow: hidden;
+}
+
+.skills-open .skills-list{
+    height: max-content;
+    margin-bottom: 2.5rem;
+}
+
+.skills-open .skills-arrow{
+    transform: rotate(-180deg);
+}
+
+
+
+
+
+
+
+
 /*Contact Form*/
-/*.contact-button{*/
-/*    display: inline-block;*/
-/*    color: black;*/
-/*    background-color: white;*/
-/*    padding:0.35em 1.2em;*/
-/*    margin:0 0.3em 0.3em 0;*/
-/*    box-sizing: border-box;*/
-/*    border-radius: 0.25em;*/
-/*    border:0.1em solid black;*/
-/*    text-align: center;*/
-/*    transition: all 0.2s;*/
-/*    cursor: pointer;*/
-/*}*/
+.contact-button{
+    display: inline-block;
+    color: floralwhite;
+    background-color: mediumpurple;
+    padding: .7rem 2rem;
+    font-size: 2rem;
+    margin:0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    border-radius: 5rem;
+    border:0.1em solid #4b4276;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+}
 
-/*.contact-button:hover{*/
-/*    background: none;*/
-/*    color: white;*/
-/*    border:0.1em solid floralwhite;*/
-/*}*/
 
+
+.contact-button:hover{
+    background-color: #4b4276;
+}
+
+
+
+
+/*media queries*/
 @media (max-width: 1200px){
     html{
         font-size: 55%;
@@ -216,6 +358,13 @@ header .navbar ul li a:hover{
 @media (max-width: 400px){
     header{
        width: 100vw;
+        left: -100%;
     }
+
+    /*.bg-shadow{*/
+    /*    visibility: visible;*/
+    /*    opacity: 0.7;*/
+    /*}*/
+
 
 }
